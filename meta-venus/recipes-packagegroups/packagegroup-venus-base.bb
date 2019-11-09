@@ -46,6 +46,7 @@ RDEPENDS_${PN} += "\
     dbus-tools \
     default-locale \
     dnsmasq \
+    dpkg-start-stop \
     e2fsprogs \
     eglibc-utils \
     ftdi-control \
@@ -76,7 +77,6 @@ RDEPENDS_${PN} += "\
     rtl8192eu \
     screen \
     socat \
-    start-stop-daemon \
     strace \
     sysctl-conf \
     tzdata \
