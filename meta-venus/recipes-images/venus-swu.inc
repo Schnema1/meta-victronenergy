@@ -1,13 +1,15 @@
 python () {
     dn = os.path.dirname(d.getVar('FILE'))
     pn = d.getVar('PN')
-    pv = pn.split('-')[-1]
+    pl = pn.split('-')
+    pv = pl.pop()
+    pb = '-'.join(pl)
 
     fp = [os.path.join(dn, 'venus-swu', pv), os.path.join(dn, 'venus-swu')]
     d.appendVar('FILESEXTRAPATHS', ':'.join(fp))
 
     if pv == d.getVar('SWU_VERSION'):
-       d.appendVar('PROVIDES', 'venus-swu')
+       d.appendVar('PROVIDES', pb)
 }
 
 SRC_URI = "file://sw-description"
