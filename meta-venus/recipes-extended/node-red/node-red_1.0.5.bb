@@ -15,10 +15,10 @@ SRC_URI = "\
 	https://github.com/${PN}/${PN}/releases/download/${PV}/${PN}-${PV}.zip \
 "
 
-SRC_URI[md5sum] = "a7c20a9708ea532a51376392a96d687b"
-SRC_URI[sha256sum] = "5a6cfa7513d0dc40402bbed5ed7789b99279eec396761111d08a850a7c245eae"
+SRC_URI[md5sum] = "f00fd7a358f3798c51acb5b7d1a2a616"
+SRC_URI[sha256sum] = "6eb515a0e97af67c152029d4f9234a2a87518822410dc6febf76fa6575877773"
 
-S = "${WORKDIR}/${PN}-${PV}"
+S = "${WORKDIR}/${PN}"
 
 def get_nodejs_arch(target_arch, d):
     import re
@@ -58,6 +58,8 @@ do_install() {
 
 	# Install
 	install -d ${D}${NODE_MODULES_DIR}${PN}
+	echo ${D}${NODE_MODULES_DIR}${PN}
+	ls ${D}${NODE_MODULES_DIR}${PN}
 	cp -r ${S}/* ${D}${NODE_MODULES_DIR}${PN}
 
 	# Remove hardware specific files
