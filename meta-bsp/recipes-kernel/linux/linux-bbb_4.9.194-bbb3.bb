@@ -21,6 +21,9 @@ inherit kernel
 S = "${WORKDIR}/linux-${PV}"
 B = "${WORKDIR}/build"
 
-SRC_URI = "https://github.com/victronenergy/linux/archive/v${PV}.tar.gz"
+SRC_URI = "https://github.com/victronenergy/linux/archive/v${PV}.tar.gz \
+    file://0001-Leave-CONFIG_ADVISE_SYSCALLS-to-its-default-enabled.patch \
+"
+
 SRC_URI[md5sum] = "a58427fcb954ad25f0695942d30a051a"
 SRC_URI[sha256sum] = "446cf076aafd1f0639efd5b339695bb7cbf8ada4f8f7532b7edec56328e7f0e4"
