@@ -7,19 +7,19 @@ inherit daemontools
 inherit python-compile
 
 SRC_URI = " \
-    gitsm://github.com/victronenergy/localsettings.git;protocol=https;tag=v${PV} \
+    gitsm://github.com/victronenergy/localsettings.git;protocol=https;branch=p3 \
     file://com.victronenergy.settings.conf \
 "
+SRCREV = "a7902b60f94b14c8bdb6b23773a3c4069c9d00e6"
 S = "${WORKDIR}/git"
 
 DAEMONTOOLS_SERVICE_DIR = "${bindir}/service"
 DAEMONTOOLS_RUN = "softlimit -d 100000000 -s 1000000 -a 100000000 ${bindir}/${PN}.py --path=/data/conf"
 
 RDEPENDS_${PN} += " \
-    python \
-    python-dbus \
-    python-enum34 \
-    python-lxml \
+    python3-core \
+    python3-dbus \
+    python3-lxml \
 "
 
 do_install () {
