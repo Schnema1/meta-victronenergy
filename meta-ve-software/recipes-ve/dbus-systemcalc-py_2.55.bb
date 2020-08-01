@@ -7,18 +7,19 @@ inherit daemontools
 inherit python-compile
 
 SRC_URI = " \
-    gitsm://github.com/victronenergy/dbus-systemcalc-py.git;protocol=https;tag=${PV} \
+    gitsm://github.com/victronenergy/dbus-systemcalc-py.git;protocol=https;branch=p3 \
     file://com.victronenergy.system.conf \
 "
+SRCREV = "95272bc3c972a67062e895254164851309b68f33"
 
 S = "${WORKDIR}/git"
 
 RDEPENDS_${PN} = " \
     localsettings \
-    python \
-    python-dbus \
-    python-pprint \
-    python-pygobject \
+    python3-core \
+    python3-dbus \
+    python3-pprint \
+    python3-pygobject \
 "
 
 DAEMONTOOLS_SERVICE_DIR = "${bindir}/service"
