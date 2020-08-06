@@ -7,11 +7,13 @@ inherit daemontools
 inherit python-compile
 
 PR = "r0"
-SRC_URI = "gitsm://github.com/victronenergy/dbus_conversions.git;protocol=https;tag=${PV}"
+SRC_URI = "gitsm://github.com/victronenergy/dbus_conversions.git;protocol=https;branch=p3"
+SRCREV = "eb8600711d2aae7dbe503d3f8514b53b2f227a51"
+
 DAEMONTOOLS_SERVICE_DIR = "${bindir}/service"
 DAEMONTOOLS_RUN = "softlimit -d 100000000 -s 1000000 -a 100000000 ${bindir}/dbus_vebus_to_pvinverter.py"
 S = "${WORKDIR}/git"
-RDEPENDS_${PN} = "python python-dbus"
+RDEPENDS_${PN} = "python3-core python3-dbus"
 
 do_install () {
     install -d ${D}${bindir}
