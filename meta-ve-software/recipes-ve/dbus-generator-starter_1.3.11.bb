@@ -6,20 +6,20 @@ inherit daemontools
 inherit python-compile
 
 SRC_URI = " \
-    gitsm://github.com/victronenergy/dbus_generator.git;protocol=https;tag=v${PV} \
+    gitsm://github.com/victronenergy/dbus_generator.git;protocol=https;branch=p3 \
     file://com.victronenergy.generator-starter.conf \
 "
+SRCREV = "bf54644808afd944b42a29aa6b1bc41126d337e0"
 S = "${WORKDIR}/git"
 
 RDEPENDS_${PN} = " \
     localsettings \
-    python \
-    python-argparse \
-    python-ctypes \
-    python-datetime \
-    python-dbus \
-    python-json \
-    python-pygobject \
+    python3-core \
+    python3-ctypes \
+    python3-datetime \
+    python3-dbus \
+    python3-json \
+    python3-pygobject \
 "
 
 DAEMONTOOLS_SERVICE_DIR = "${bindir}/service"
