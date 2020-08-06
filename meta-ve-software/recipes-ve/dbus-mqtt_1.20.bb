@@ -5,12 +5,13 @@ inherit gmakevelib
 inherit daemontools
 inherit python-compile
 
-RDEPENDS_${PN} = "python mosquitto"
+RDEPENDS_${PN} = "python3-core python3-paho-mqtt mosquitto"
 
 SRC_URI = " \
-    gitsm://github.com/victronenergy/dbus-mqtt.git;protocol=https;tag=v${PV} \
+    gitsm://github.com/victronenergy/dbus-mqtt.git;protocol=https;branch=p3 \
     file://0001-add-dummy-distclean.patch \
 "
+SRCREV = "1d471895b1c08b5d2dd611c9c189ef12ac4f126a"
 S = "${WORKDIR}/git"
 
 DAEMONTOOLS_SERVICE_DIR = "${bindir}/service"
