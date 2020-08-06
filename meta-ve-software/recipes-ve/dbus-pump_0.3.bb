@@ -6,20 +6,20 @@ inherit daemontools
 inherit python-compile
 
 SRC_URI = " \
-    gitsm://github.com/victronenergy/dbus_pump.git;protocol=https;tag=v${PV} \
+    gitsm://github.com/victronenergy/dbus_pump.git;protocol=https;branch=p3 \
     file://com.victronenergy.pump.conf \
 "
+SRCREV = "5b8e6f872bebd3cf961987f18e58b3d5c5edac09"
 PR = "r1"
 S = "${WORKDIR}/git"
 
 RDEPENDS_${PN} = " \
     localsettings \
-    python \
-    python-argparse \
-    python-datetime \
-    python-dbus \
-    python-json \
-    python-pygobject \
+    python3-core \
+    python3-datetime \
+    python3-dbus \
+    python3-json \
+    python3-pygobject \
 "
 
 DAEMONTOOLS_SERVICE_DIR = "${bindir}/service"
