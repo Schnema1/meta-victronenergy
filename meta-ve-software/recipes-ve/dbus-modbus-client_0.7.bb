@@ -8,16 +8,17 @@ inherit python-compile
 
 RDEPENDS_${PN} = "\
     bash \
-    python \
-    python-dbus \
-    python-pygobject \
-    python-pymodbus \
+    python3-core \
+    python3-dbus \
+    python3-pygobject \
+    python3-pymodbus \
 "
 
 SRC_URI = " \
-    gitsm://github.com/victronenergy/${BPN}.git;protocol=ssh;user=git;tag=v${PV} \
+    gitsm://github.com/victronenergy/${BPN}.git;protocol=ssh;user=git;branch=p3 \
     file://start-serial.sh \
 "
+SRCREV = "6cd78ad609eb2fe7b12a73478a021d116f9bf20c"
 S = "${WORKDIR}/git"
 
 DAEMONTOOLS_SERVICE_DIR = "${bindir}/service"
