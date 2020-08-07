@@ -7,16 +7,17 @@ inherit daemontools
 inherit python-compile
 
 SRC_URI = "\
-    gitsm://github.com/victronenergy/dbus-digitalinputs.git;protocol=https;tag=v${PV} \
+    gitsm://github.com/victronenergy/dbus-digitalinputs.git;protocol=https;branch=p3-v2 \
     file://start-digitalinputs.sh \
 "
+SRCREV = "4392b85305cb430710fc83c46429efac08cfaaba"
 S = "${WORKDIR}/git"
 
 RDEPENDS_${PN} = " \
     localsettings \
-    python \
-    python-dbus \
-    python-pygobject \
+    python3-core \
+    python3-dbus \
+    python3-pygobject \
 "
 
 DAEMONTOOLS_SERVICE_DIR = "${bindir}/service"
