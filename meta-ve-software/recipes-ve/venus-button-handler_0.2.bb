@@ -7,16 +7,16 @@ inherit daemontools
 inherit python-compile
 
 RDEPENDS_${PN} = "\
-    python \
-    python-argparse \
-    python-dbus \
-    python-evdev \
-    python-pygobject \
+    python3-core \
+    python3-dbus \
+    python3-evdev \
+    python3-pygobject \
 "
 
 SRC_URI = "\
-    gitsm://github.com/victronenergy/${BPN}.git;protocol=https;tag=v${PV} \
+    gitsm://github.com/victronenergy/${BPN}.git;protocol=https;branch=p3 \
 "
+SRCREV = "b9e81dd2228425fd2279e3d4e47d9dfddd1bd87e"
 S = "${WORKDIR}/git"
 
 DAEMONTOOLS_SERVICE_DIR = "${bindir}/service"
