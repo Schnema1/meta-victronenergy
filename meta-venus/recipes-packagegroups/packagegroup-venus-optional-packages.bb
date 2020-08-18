@@ -13,7 +13,6 @@ DEPENDS += "\
     openvpn \
     packagegroup-core-buildessential \
     packagegroup-replace-busybox \
-    perf \
     python3-pylint \
     s6 \
     tcpdump \
@@ -24,6 +23,7 @@ DEPENDS += "\
     vim \
     x11vnc \
 "
+# FIXME: perf
 
 # Add as optional packages until we include python3 proper
 DEPENDS += "\
