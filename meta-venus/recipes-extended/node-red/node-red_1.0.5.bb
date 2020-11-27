@@ -3,20 +3,18 @@ HOMEPAGE = "http://nodered.org"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=d6f37569f5013072e9490d2194d10ae6"
 
-S = "${WORKDIR}/${PN}"
-
 RDEPENDS_${PN} += "\
 	bash \
 "
 
 SRC_URI = "\
-	https://github.com/${PN}/${PN}/releases/download/${PV}/${PN}-${PV}.zip \
+	https://registry.npmjs.org/${PN}/-/${PN}-${PV}.tgz;unpack=0 \
 	file://npm-shrinkwrap.json \
 	file://start-node-red.sh \
 "
 
-SRC_URI[md5sum] = "f00fd7a358f3798c51acb5b7d1a2a616"
-SRC_URI[sha256sum] = "6eb515a0e97af67c152029d4f9234a2a87518822410dc6febf76fa6575877773"
+SRC_URI[md5sum] = "e4d00ef79569b0e2b888e4f8185cdf86"
+SRC_URI[sha256sum] = "50b486d18a85510a141f803e2cfedcce230bb1600b99e492c4f72defa2562485"
 
 inherit npmve
 inherit daemontools
