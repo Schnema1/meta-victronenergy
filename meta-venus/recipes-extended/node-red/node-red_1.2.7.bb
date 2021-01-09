@@ -15,12 +15,12 @@ SRC_URI = "\
 	file://user-authentication.js \
 "
 
-SRC_URI[md5sum] = "e4d00ef79569b0e2b888e4f8185cdf86"
-SRC_URI[sha256sum] = "50b486d18a85510a141f803e2cfedcce230bb1600b99e492c4f72defa2562485"
+SRC_URI[md5sum] = "9e4e183b252c89059035394cc172b1bf"
+SRC_URI[sha256sum] = "0565a54a07a769b527b4d0c48e4d5c8dbdf030912ca324c43cc7cdc5394b2871"
 
 inherit npmve
 inherit daemontools
-	
+
 DAEMON_PN = "${PN}"
 DAEMONTOOLS_SERVICE_DIR = "/etc/node-red/service"
 DAEMONTOOLS_SCRIPT = "HOME=/home/root exec ${bindir}/node-red"
@@ -31,14 +31,14 @@ NPM_INSTALLDIR = "${D}${libdir}/node_modules/${PN}"
 
 do_install_append() {
         # Remove hardware specific files
-	rm ${NPM_INSTALLDIR}/bin/node-red-pi	
+	rm ${NPM_INSTALLDIR}/bin/node-red-pi
 
 	# this folder keeps the default settings. start-node-red.sh copies them
 	# to the data partition on first boot.
 	install -d ${NPM_INSTALLDIR}/defaults
 	install -m 0755 ${WORKDIR}/settings.js ${NPM_INSTALLDIR}/defaults
 	install -m 0755 ${WORKDIR}/user-authentication.js ${NPM_INSTALLDIR}/defaults
-	
+
 	# Symlinks
 	mkdir ${D}${bindir}
 	#ln -s ${libdir}/node_modules/${PN}/red.js ${D}${bindir}/${PN}
