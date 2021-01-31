@@ -7,9 +7,11 @@ inherit daemontools
 inherit python-compile
 
 SRC_URI = " \
-    gitsm://github.com/victronenergy/localsettings.git;protocol=https;tag=v${PV} \
+    gitsm://github.com/victronenergy/localsettings.git;protocol=https;branch=mans/adc-settings \
     file://com.victronenergy.settings.conf \
 "
+SRCREV = "${AUTOREV}"
+PV_append = "+git${SRCPV}"
 S = "${WORKDIR}/git"
 
 DAEMONTOOLS_SERVICE_DIR = "${bindir}/service"
