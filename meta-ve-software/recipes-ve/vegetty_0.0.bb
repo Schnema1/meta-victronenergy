@@ -1,5 +1,5 @@
 DESCRIPTION = "Make console available on tty port"
-# Recipe is used on CCGX to make the console available on ttyO1, which doubles as
+# Recipe is used on CCGX to make the console available on ttyS1, which doubles as
 # VE.Direct port 1. Standard disabled, can be enabled from the menu
 
 LICENSE = "MIT"

@@ -4,7 +4,7 @@
 bootpart=1:2
 bootdir=/boot
 bootfile=zImage
-console=ttyO0,115200n8
+console=ttyS0,115200n8
 fdtaddr=0x88000000
 fdtfile=bbb-venus.dtb
 loadaddr=0x82000000
